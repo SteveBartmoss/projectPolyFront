@@ -40,6 +40,8 @@ export function Login() {
                 }
                 localStorage.setItem('session', JSON.stringify(sessionData))
 
+                navigate('/home')
+
             }
 
         }catch(error){
