@@ -9,3 +9,9 @@ Proyecto para crear un foro de programacion
 ```bash
 git clone ULR_REPOSITORIO
 ```
+
+2 instalar dependencias de node
+
+```bash
+npm install
+```
