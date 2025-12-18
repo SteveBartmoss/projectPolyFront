@@ -15,3 +15,8 @@ git clone ULR_REPOSITORIO
 ```bash
 npm install
 ```
+3 ejecutar el proyecto en desarrollo
+
+```bash
+npm run dev
+```
