@@ -79,6 +79,10 @@ export function Login() {
                     />
                 </DivCol>
 
+                <DivCol>
+                    <p>No tienes una cuenta, crea una <a href="/register">aqui</a> </p>
+                </DivCol>
+
             </Card>
         </DivCol>
     )
