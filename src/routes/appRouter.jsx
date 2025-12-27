@@ -1,12 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { Home } from "../pages/home/home";
+import { Layout } from "../components/layout";
 
 
-export function AppRouter(){
+export function AppRouter() {
 
-    return(
-        <Routes>
-            <Route path="home" element={<Home />} />
-        </Routes>
+    return (
+        <Layout>
+            <Routes>
+                <Route path="home" element={<Home />} />
+            </Routes>
+        </Layout>
     )
 }
