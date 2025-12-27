@@ -7,3 +7,11 @@ export function Card({children}){
         </div>
     )
 }
+
+export function CardHeader({children}){
+    return (
+        <div className="card-header">
+            {children}
+        </div>
+    )
+}
