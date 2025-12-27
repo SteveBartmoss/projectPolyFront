@@ -24,3 +24,11 @@ export function DivPanel({children}){
         </div>
     )
 }
+
+export function DivFlex({children}){
+    return(
+        <div className='div-flex'>
+            {children}
+        </div>
+    )
+}
