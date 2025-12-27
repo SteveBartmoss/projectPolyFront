@@ -16,3 +16,11 @@ export function DivRow({children}){
         </div>
     )
 }
+
+export function DivPanel({children}){
+    return (
+        <div className='div-panel'>
+            {children}
+        </div>
+    )
+}
