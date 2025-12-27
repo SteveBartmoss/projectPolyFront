@@ -1,4 +1,4 @@
-import { DivFlex } from '../ui/boxes/boxes'
+import { DivBox, DivFlex } from '../ui/boxes/boxes'
 import './layout.css'
 import { TopBar } from './topbar'
 
@@ -8,15 +8,15 @@ export function Layout({ children }) {
         <DivFlex>
             <TopBar />
             <DivFlex direction='flex-row'>
-                <div>
+                <DivBox long={'10%'}>
                     <h1>Left aside</h1>
-                </div>
-                <div>
+                </DivBox>
+                <DivBox long={'80%'}>
                     {children}
-                </div>
-                <div>
+                </DivBox>
+                <DivBox long={'10%'}>
                     <h1>righ aside</h1>
-                </div>
+                </DivBox>
             </DivFlex>
         </DivFlex>
     )
