@@ -7,7 +7,7 @@ export function Layout({ children }) {
     return (
         <DivFlex>
             <TopBar />
-            <div>
+            <DivFlex direction='flex-row'>
                 <div>
                     <h1>Left aside</h1>
                 </div>
@@ -17,7 +17,7 @@ export function Layout({ children }) {
                 <div>
                     <h1>righ aside</h1>
                 </div>
-            </div>
+            </DivFlex>
         </DivFlex>
     )
 }
