@@ -11,3 +11,11 @@
     align-items: center;
     justify-content: center;
 }
+
+.div-panel{
+    display: flex;
+    width: 99vw;
+    height: 99vh;
+    align-items: center;
+    justify-content: center;
+}
