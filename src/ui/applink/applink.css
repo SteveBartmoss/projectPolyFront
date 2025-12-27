@@ -1,0 +1,18 @@
+.app-link {
+    color: #63b3ed; /* azul Chakra */
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.app-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.app-link:focus-visible {
+    outline: 2px solid #63b3ed;
+    outline-offset: 2px;
+}
