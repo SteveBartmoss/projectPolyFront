@@ -3,21 +3,25 @@ import { Login } from "../pages/login/login";
 import { ProtectedRoute } from "./protectedRoute";
 import { AppRouter } from "./appRouter";
 import { Register } from "../pages/register/register";
+import { DivPanel } from "../ui/boxes/boxes";
 
 
-export function MainRouter(){
+export function MainRouter() {
 
-    return(
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />}/>
+    return (
+        <DivPanel>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
 
-                <Route element={<ProtectedRoute />}>
-                    <Route path="/*" element={<AppRouter />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+                    <Route element={<ProtectedRoute />}>
+                        <Route path="/*" element={<AppRouter />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </DivPanel>
+
     )
 }
