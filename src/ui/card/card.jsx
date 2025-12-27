@@ -23,3 +23,11 @@ export function CardBody({children}){
         </div>
     )
 }
+
+export function CardFooter({children}){
+    return(
+        <div className="card-footer">
+            {children}
+        </div>
+    )
+}
