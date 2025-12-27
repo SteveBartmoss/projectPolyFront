@@ -25,9 +25,9 @@ export function DivPanel({children}){
     )
 }
 
-export function DivFlex({children}){
+export function DivFlex({children,direction='flex-column'}){
     return(
-        <div className='div-flex'>
+        <div className={`div-flex ${direction}`}>
             {children}
         </div>
     )
