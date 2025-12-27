@@ -32,3 +32,11 @@ export function DivFlex({children,direction='flex-column'}){
         </div>
     )
 }
+
+export function DivBox({children,long,tall}){
+    return(
+        <div style={{width: long, height: tall}}>
+            {children}
+        </div>
+    )
+}
