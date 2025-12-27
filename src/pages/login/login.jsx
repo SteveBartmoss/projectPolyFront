@@ -5,6 +5,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "../../ui/card/card";
 import { TextField } from "../../ui/textfield/textField";
 import { useState } from "react";
 import { apiFetch } from "../../api/api";
+import { AppLink } from "../../ui/applink/AppLink";
 
 export function Login() {
 
@@ -50,39 +51,36 @@ export function Login() {
     }
 
     return (
-        <DivPanel>
-            <Card>
-                <CardHeader>
-                    <h1>Inicia sesion</h1>
-                </CardHeader>
-                    
-                <CardBody>
-                    <TextField
-                            nameField="user"
-                            textHolder="Usuario"
-                            target={formData.user}
-                            handleTarget={handleChange}
-                        />
-                    
-                    <TextField
-                            nameField="password"
-                            textHolder="Password"
-                            target={formData.password}
-                            handleTarget={handleChange}
-                        />
+        <Card>
+            <CardHeader>
+                <h1>Inicia sesion</h1>
+            </CardHeader>
 
-                        <Btn
-                            title='Iniciar sesion'
-                            handle={hanleSubmit}
-                        />
-                </CardBody>
+            <CardBody>
+                <TextField
+                    nameField="user"
+                    textHolder="Usuario"
+                    target={formData.user}
+                    handleTarget={handleChange}
+                />
 
-                <CardFooter>
-                    <p>No tienes una cuenta, crea una <a href="/register">aqui</a> </p>
-                </CardFooter>
-                
-                </Card>
-        </DivPanel>
+                <TextField
+                    nameField="password"
+                    textHolder="Password"
+                    target={formData.password}
+                    handleTarget={handleChange}
+                />
+
+                <Btn
+                    title='Iniciar sesion'
+                    handle={hanleSubmit}
+                />
+            </CardBody>
+
+            <CardFooter>
+                <p>No tienes una cuenta, crea una <AppLink url={"/register"}>Aqui</AppLink> </p>
+            </CardFooter>
+        </Card>
 
     )
 }
