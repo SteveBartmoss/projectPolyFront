@@ -1,16 +1,16 @@
-.card{
+.card {
     background-color: #2e3748;
     border-radius: .5rem;
     padding: 1.25rem;
 
-     box-shadow:
+    box-shadow:
         0 1px 2px rgba(0, 0, 0, 0.15),
         0 4px 12px rgba(0, 0, 0, 0.25);
 
     ransition:
         box-shadow 0.2s ease,
         transform 0.2s ease;
-        
+
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -34,6 +34,12 @@
 
 .card-footer {
     margin-top: 1rem;
-    font-size: 0.875rem;
-    opacity: 0.85;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+.card h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
