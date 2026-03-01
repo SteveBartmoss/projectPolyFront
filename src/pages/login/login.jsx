@@ -65,6 +65,7 @@ export function Login() {
                 />
 
                 <TextField
+                    isPass={true}
                     nameField="password"
                     textHolder="Password"
                     target={formData.password}
