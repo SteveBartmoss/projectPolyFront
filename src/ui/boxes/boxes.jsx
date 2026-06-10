@@ -16,3 +16,27 @@ export function DivRow({children}){
         </div>
     )
 }
+
+export function DivPanel({children}){
+    return (
+        <div className='div-panel'>
+            {children}
+        </div>
+    )
+}
+
+export function DivFlex({children,direction='flex-column'}){
+    return(
+        <div className={`div-flex ${direction}`}>
+            {children}
+        </div>
+    )
+}
+
+export function DivBox({children,long,tall}){
+    return(
+        <div style={{width: long, height: tall}}>
+            {children}
+        </div>
+    )
+}

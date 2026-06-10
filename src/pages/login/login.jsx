@@ -1,36 +1,37 @@
 import { useNavigate } from "react-router-dom";
-import { DivCol } from "../../ui/boxes/boxes";
+import { DivCol, DivPanel } from "../../ui/boxes/boxes";
 import { Btn } from "../../ui/btn/btn";
-import { Card } from "../../ui/card/card";
+import { Card, CardBody, CardFooter, CardHeader } from "../../ui/card/card";
 import { TextField } from "../../ui/textfield/textField";
 import { useState } from "react";
 import { apiFetch } from "../../api/api";
+import { AppLink } from "../../ui/applink/AppLink";
 
 export function Login() {
 
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
-        user: '',
+        email: '',
         password: ''
     })
 
     const handleChange = (event) => {
-        const {name, value} = event.target
-        setFormData({...formData, [name]: value})
+        const { name, value } = event.target
+        setFormData({ ...formData, [name]: value })
     }
 
-    const hanleSubmit = async()=>{
-        try{
+    const hanleSubmit = async () => {
+        try {
 
-            const response = await apiFetch('users/login',{
+            const response = await apiFetch('user/login', {
                 method: 'POST',
                 body: JSON.stringify(formData)
             })
 
             let data = await response.json()
 
-            if(data.token){
+            if (data.token) {
 
                 const sessionData = {
                     id: data.id,
@@ -44,42 +45,43 @@ export function Login() {
 
             }
 
-        }catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
 
     return (
-        <DivCol>
-            <Card>
+        <Card>
+            <CardHeader>
                 <h1>Inicia sesion</h1>
+            </CardHeader>
 
-                <DivCol>
-                    <TextField 
-                        nameField="user" 
-                        textHolder="Usuario"
-                        target={formData.user}
-                        handleTarget={handleChange} 
-                    />
-                </DivCol>
+            <CardBody>
+                <TextField
+                    nameField="email"
+                    textHolder="Usuario"
+                    target={formData.user}
+                    handleTarget={handleChange}
+                />
 
-                <DivCol>
-                    <TextField 
-                        nameField="password"
-                        textHolder="Password"
-                        target={formData.password}
-                        handleTarget={handleChange} 
-                    />
-                </DivCol>
-                
-                <DivCol>
-                    <Btn  
-                        title='Iniciar sesion' 
-                        handle={hanleSubmit} 
-                    />
-                </DivCol>
+                <TextField
+                    isPass={true}
+                    nameField="password"
+                    textHolder="Password"
+                    target={formData.password}
+                    handleTarget={handleChange}
+                />
 
-            </Card>
-        </DivCol>
+                <Btn
+                    title='Iniciar sesion'
+                    handle={hanleSubmit}
+                />
+            </CardBody>
+
+            <CardFooter>
+                <p>No tienes una cuenta, crea una <AppLink url={"/register"}>Aqui</AppLink> </p>
+            </CardFooter>
+        </Card>
+
     )
 }
