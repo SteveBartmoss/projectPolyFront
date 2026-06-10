@@ -12,7 +12,7 @@ export function Login() {
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
-        user: '',
+        email: '',
         password: ''
     })
 
@@ -24,7 +24,7 @@ export function Login() {
     const hanleSubmit = async () => {
         try {
 
-            const response = await apiFetch('users/login', {
+            const response = await apiFetch('user/login', {
                 method: 'POST',
                 body: JSON.stringify(formData)
             })
@@ -58,7 +58,7 @@ export function Login() {
 
             <CardBody>
                 <TextField
-                    nameField="user"
+                    nameField="email"
                     textHolder="Usuario"
                     target={formData.user}
                     handleTarget={handleChange}
