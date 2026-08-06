@@ -1,7 +1,9 @@
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Btn } from '../ui/btn/btn'
 import { PopOver } from '../ui/popover/popOver'
 import './topbar.css'
+import imgIcon from '../assets/steveA.png'
+import { ProfileIcon } from '../ui/profileIcon/profileIcon'
 
 export function TopBar() {
 
@@ -11,16 +13,17 @@ export function TopBar() {
 
         localStorage.removeItem('session')
         navigate('/login')
+        
     }
 
     return (
         <div className='div-topbar'>
-            <h1>The pipe</h1>
-            <PopOver text={'user img'}>
-                <Btn 
-                    title='Salir'
-                    handle={handleLogout}
-                />
+            <NavLink className='title-brand' to='/home'>The pipe</NavLink>
+            <PopOver head={<ProfileIcon url={imgIcon} />}>
+                <NavLink to='/profile' >Perfil</NavLink>
+                <p onClick={handleLogout}>
+                    Salir
+                </p>
             </PopOver>
         </div>
     )

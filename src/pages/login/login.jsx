@@ -2,10 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { DivCol, DivPanel } from "../../ui/boxes/boxes";
 import { Btn } from "../../ui/btn/btn";
 import { Card, CardBody, CardFooter, CardHeader } from "../../ui/card/card";
-import { TextField } from "../../ui/textfield/textField";
+
 import { useState } from "react";
-import { apiFetch } from "../../api/api";
+import { apiClient, apiFetch } from "../../api/api";
 import { AppLink } from "../../ui/applink/AppLink";
+import { TextField } from "../../plank-jsx/textfield/textField";
 
 export function Login() {
 
@@ -24,26 +25,24 @@ export function Login() {
     const hanleSubmit = async () => {
         try {
 
-            const response = await apiFetch('user/login', {
-                method: 'POST',
-                body: JSON.stringify(formData)
-            })
+            const response = await apiClient.post('/user/login',{body: formData})
 
-            let data = await response.json()
-
-            if (data.token) {
+            if(response.data.token) {
 
                 const sessionData = {
-                    id: data.id,
-                    userName: data.user,
-                    fullName: `${data.firstName} ${data.lastName}`,
-                    token: data.token
+                    id: response.data.id,
+                    userName: response.data.user,
+                    fullName: `${response.data.firstName} ${response.data.lastName}`,
+                    token: response.data.token
                 }
                 localStorage.setItem('session', JSON.stringify(sessionData))
 
                 navigate('/home')
-
             }
+
+            console.log(response)
+
+            
 
         } catch (error) {
             console.log(error)

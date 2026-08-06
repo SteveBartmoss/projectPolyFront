@@ -1,3 +1,5 @@
+import { NeoFetchClient } from "@stevebartmoss/neofetch"
+
 const BASE_URL = 'http://localhost:3000/api/'
 
 export async function apiFetch(endpoint, options={}){
@@ -16,3 +18,11 @@ export async function apiFetch(endpoint, options={}){
     return response
     
 }
+
+export const apiClient = new NeoFetchClient(
+    "http://localhost:3000/api",
+    {
+        "Content-Type": "application/json",
+    },
+    10000
+);
