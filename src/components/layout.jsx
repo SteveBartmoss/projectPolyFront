@@ -8,14 +8,8 @@ export function Layout({ children }) {
         <DivFlex>
             <TopBar />
             <DivFlex direction='flex-row'>
-                <DivBox long={'10%'}>
-                    <h1>Left aside</h1>
-                </DivBox>
-                <DivBox long={'80%'}>
+                <DivBox long={'100%'}>
                     {children}
-                </DivBox>
-                <DivBox long={'10%'}>
-                    <h1>righ aside</h1>
                 </DivBox>
             </DivFlex>
         </DivFlex>
