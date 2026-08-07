@@ -1,28 +1,41 @@
 
 import profileImg from '../../assets/steveA.png'
+import { Timeline } from '../../components/timeline/timeline'
+import { TimelineForm } from '../../components/timeline/timelineForm'
+import { Box } from '../../plank-jsx/containers/box'
+import './profile.css'
 
 export function Profile() {
     return (
         <>
-            <div>
-                <div>
+            <Box styles={{
+                display: "flex",
+                flexDirection: "column",
+            }}>
+                <Box styles={{
+                    width: "70%",
+                    margin: "auto",
+                }}>
                     <div>
-                        <img src={profileImg} />
+                        <div>
+                            Portada
+                        </div>
+                        <div>
+                            <img className='profile-img' src={profileImg} />
+                        </div>
+                        <div>
+                            <h1>Usuario</h1>
+                            <span>Nombre</span>
+                        </div>
                     </div>
                     <div>
-                        <h1>Usuario</h1>
-                        <span>Nombre</span>
+                        <TimelineForm />
+
+                        <Timeline />
+
                     </div>
-                </div>
-                <div>
-                    <div>
-                        Portada
-                    </div>
-                    <div>
-                        Feed
-                    </div>
-                </div>
-            </div>
+                </Box>
+            </Box>
         </>
     )
 }
