@@ -10,16 +10,13 @@ export function Profile() {
         <>
             <Box styles={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
             }}>
                 <Box styles={{
-                    width: "70%",
+                    width: "20%",
                     margin: "auto",
                 }}>
                     <div>
-                        <div>
-                            Portada
-                        </div>
                         <div>
                             <img className='profile-img' src={profileImg} />
                         </div>
@@ -28,7 +25,15 @@ export function Profile() {
                             <span>Nombre</span>
                         </div>
                     </div>
+                </Box>
+                <Box styles={{
+                    width: "70%",
+                    margin: "auto",
+                }}>
                     <div>
+                        <div>
+                            Portada
+                        </div>
                         <TimelineForm />
 
                         <Timeline />
