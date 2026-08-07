@@ -13,16 +13,32 @@ export function Home(){
     
     return(
         <>
-            <div style={{
-                width: "70%",
-                margin: "auto",
+            <Box styles={{
+                display: "flex",
+                flexDirection: "row",
             }}>
 
-                <TimelineForm />
+                <Box styles={{
+                    width: "10%",
+                    margin: "auto",
+                }}>
+                    <h1>left aside</h1>
+                </Box>
+                <Box styles={{
+                    width: "80%",
+                    margin: "auto",
+                }}>
+                    <TimelineForm />
 
-                <Timeline />
-                
-            </div>
+                    <Timeline />
+                </Box>
+                <Box styles={{
+                    width: "10%",
+                    margin: "auto",
+                }}>
+                    <h1>right aside</h1>
+                </Box>
+            </Box>
             
         </>
     )
