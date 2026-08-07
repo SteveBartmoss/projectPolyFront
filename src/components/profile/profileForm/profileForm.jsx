@@ -6,6 +6,28 @@ import { Btn } from "../../../ui/btn/btn";
 
 export function ProfileForm() {
 
+    const [formData, setFormData] = useState({
+        imgProfile: '',
+        textState: '',
+        alias: '',
+        biografy: '',
+    })
+
+    const handleChange = (event) => {
+        const {name, value} = event.target
+        setFormData({...formData, [name]: value})
+    }
+
+    const handleSubmit = async () => {
+        try{
+
+            console.log(formData)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <>
             <Box styles={{
@@ -17,7 +39,12 @@ export function ProfileForm() {
                 justifyContent: "center",
             }}>
                 <div>
-                    <TextField textHolder="Imagen" />
+                    <TextField 
+                        nameField='imgProfile' 
+                        textHolder="Imagen" 
+                        target={formData.imgProfile}
+                        handleTarget={handleChange}
+                    />
                 </div>
                 <div>
                     <TextField textHolder="estado" />
