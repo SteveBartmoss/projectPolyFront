@@ -21,6 +21,7 @@ export function TopBar() {
             <NavLink className='title-brand' to='/home'>The pipe</NavLink>
             <PopOver head={<ProfileIcon url={imgIcon} />}>
                 <NavLink to='/profile' >Perfil</NavLink>
+                <NavLink to='/config-profile'>Configuracion</NavLink>
                 <p onClick={handleLogout}>
                     Salir
                 </p>
