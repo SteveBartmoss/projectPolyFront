@@ -9,8 +9,8 @@ export function TextBox({nameField,content,setContent,placeholder}){
                 name={nameField}
                 placeholder={placeholder}
                 value={content} 
-                onChange={(event)=>setContent(event.target.value)}>
-                </textarea>
+                onChange={setContent}>
+            </textarea>
         </>
     )
 }
