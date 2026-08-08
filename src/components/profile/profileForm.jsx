@@ -3,10 +3,13 @@ import { Box } from "../../plank-jsx/containers/box";
 import { TextBox } from "../../plank-jsx/textBox/textBox";
 import { TextField } from "../../plank-jsx/textfield/textField";
 import { Btn } from "../../ui/btn/btn";
+import { apiClient } from "../../api/api";
 
 
 export function ProfileForm() {
+
     
+
     const [formData, setFormData] = useState({
         imgProfile: '',
         textState: '',
@@ -21,8 +24,12 @@ export function ProfileForm() {
 
     const handleSubmit = async () => {
         try{
+            
+            const userData = JSON.parse(localStorage.getItem('session'))
+            let body = {...formData,userId: userData.id}
+            const response = await apiClient.post('/profile-user',{body: body})
 
-            console.log(formData)
+            console.log(response)
 
         } catch (error) {
             console.log(error)
@@ -48,16 +55,34 @@ export function ProfileForm() {
                     />
                 </div>
                 <div>
-                    <TextField textHolder="estado" />
+                    <TextField
+                        nameField='textState' 
+                        textHolder="estado"
+                        target={formData.textState}
+                        handleTarget={handleChange}
+                    />
                 </div>
                 <div>
-                    <TextField textHolder="alias" />
+                    <TextField
+                        nameField='alias' 
+                        textHolder="alias"
+                        target={formData.alias}
+                        handleTarget={handleChange} 
+                    />
                 </div>
                 <div>
-                    <TextBox placeholder="Biografia" />
+                    <TextBox 
+                        nameField='biografy'
+                        placeholder="Biografia"
+                        content={formData.biografy}
+                        setContent={handleChange}
+                    />
                 </div>
                 <div>
-                    <Btn title="Guardar" />
+                    <Btn 
+                        title="Guardar"
+                        handle={handleSubmit} 
+                    />
                 </div>
             </Box>
         </>
