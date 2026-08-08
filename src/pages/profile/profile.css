@@ -1,5 +1,20 @@
 
 .profile-img{
-    width: 10%;
+    width: 50%;
     border-radius: 50%;
+}
+
+.profile-portada-container {
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: .3rem;
+}
+
+.profile-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
