@@ -1,7 +1,8 @@
+import { configureStore } from "@reduxjs/toolkit"
+import timelineSlice from './timeline/timelineSlice'
 
-
-export const store = configStore({
+export const store = configureStore({
     reducer: {
-        
+        timeline: timelineSlice
     }
 })
