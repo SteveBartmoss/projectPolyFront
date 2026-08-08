@@ -16,11 +16,13 @@ export function TopBar() {
         
     }
 
+    const userData = JSON.parse(localStorage.getItem('session'))
+
     return (
         <div className='div-topbar'>
             <NavLink className='title-brand' to='/home'>The pipe</NavLink>
             <PopOver head={<ProfileIcon url={imgIcon} />}>
-                <NavLink to='/profile' >Perfil</NavLink>
+                <NavLink to={`/profile/${userData.id}`} >Perfil</NavLink>
                 <NavLink to='/config-profile'>Configuracion</NavLink>
                 <p onClick={handleLogout}>
                     Salir
