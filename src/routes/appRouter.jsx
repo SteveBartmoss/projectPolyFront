@@ -11,7 +11,7 @@ export function AppRouter() {
         <Layout>
             <Routes>
                 <Route path="home" element={<Home />} />
-                <Route path="profile" element={<Profile />} />
+                <Route path="profile/:id" element={<Profile />} />
                 <Route path="config-profile" element={<ConfigProfile />} />
             </Routes>
         </Layout>
