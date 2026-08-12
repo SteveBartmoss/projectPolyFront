@@ -50,10 +50,10 @@ export function Profile() {
                     <img className='profile-img' src={profileImg} />
                     <div>
                         <h1>Usuario</h1>
-                        <span>{profile.alias}</span>
+                        <span>{profile?.alias}</span>
                     </div>
                     <div>
-                        <p>{profile.biografy}</p>
+                        <p>{profile?.biografy}</p>
                     </div>
                 </Box>
                 <Box styles={{
