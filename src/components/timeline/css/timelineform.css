@@ -2,9 +2,16 @@
     width: 100%;
     background-color: #2e3748;
     border-radius: 0.75rem;
-    padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     transition: transform .2s ease, box-shadow .2s ease;
     margin: .3rem; 
+}
+
+.title-timeline-form{
+    border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.actions-timeline-form{
+    border-radius: 0.75rem 0.75rem 0 0;
 }
