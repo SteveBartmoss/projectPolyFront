@@ -4,11 +4,12 @@ import { TextBox } from "../../plank-jsx/textBox/textBox";
 import { TextField } from "../../plank-jsx/textfield/textField";
 import { Btn } from "../../ui/btn/btn";
 import { apiClient } from "../../api/api";
+import { FormCard } from "../../plank-jsx/cards/formCard";
 
 
 export function ProfileForm() {
 
-    
+
 
     const [formData, setFormData] = useState({
         imgProfile: '',
@@ -18,16 +19,16 @@ export function ProfileForm() {
     })
 
     const handleChange = (event) => {
-        const {name, value} = event.target
-        setFormData({...formData, [name]: value})
+        const { name, value } = event.target
+        setFormData({ ...formData, [name]: value })
     }
 
     const handleSubmit = async () => {
-        try{
-            
+        try {
+
             const userData = JSON.parse(localStorage.getItem('session'))
-            let body = {...formData,userId: userData.id}
-            const response = await apiClient.post('/profile-user',{body: body})
+            let body = { ...formData, userId: userData.id }
+            const response = await apiClient.post('/profile-user', { body: body })
 
             console.log(response)
 
@@ -36,7 +37,7 @@ export function ProfileForm() {
         }
     }
 
-    return(
+    return (
         <>
             <Box styles={{
                 width: "40rem",
@@ -46,44 +47,45 @@ export function ProfileForm() {
                 alignItems: "center",
                 justifyContent: "center",
             }}>
-                <div>
-                    <TextField 
-                        nameField='imgProfile' 
-                        textHolder="Imagen" 
+                <FormCard
+                    title={"Configuracion de Perfil"}
+                    footer={
+                        <Btn
+                            title="Guardar"
+                            handle={handleSubmit}
+                        />
+                    }
+                >
+                    <TextField
+                        nameField='imgProfile'
+                        textHolder="Imagen"
                         target={formData.imgProfile}
                         handleTarget={handleChange}
                     />
-                </div>
-                <div>
+
                     <TextField
-                        nameField='textState' 
-                        textHolder="estado"
-                        target={formData.textState}
-                        handleTarget={handleChange}
-                    />
-                </div>
-                <div>
+                            nameField='textState'
+                            textHolder="estado"
+                            target={formData.textState}
+                            handleTarget={handleChange}
+                        />
+
                     <TextField
-                        nameField='alias' 
-                        textHolder="alias"
-                        target={formData.alias}
-                        handleTarget={handleChange} 
-                    />
-                </div>
-                <div>
-                    <TextBox 
-                        nameField='biografy'
-                        placeholder="Biografia"
-                        content={formData.biografy}
-                        setContent={handleChange}
-                    />
-                </div>
-                <div>
-                    <Btn 
-                        title="Guardar"
-                        handle={handleSubmit} 
-                    />
-                </div>
+                            nameField='alias'
+                            textHolder="alias"
+                            target={formData.alias}
+                            handleTarget={handleChange}
+                        />
+
+                    <TextBox
+                            nameField='biografy'
+                            placeholder="Biografia"
+                            content={formData.biografy}
+                            setContent={handleChange}
+                        />
+
+                </FormCard>
+
             </Box>
         </>
     )
