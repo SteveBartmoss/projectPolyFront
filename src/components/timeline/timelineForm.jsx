@@ -47,7 +47,7 @@ export function TimelineForm() {
                 justifyContent: "center",
             }}>
                 <div className="div-timeline-form">
-                    <div>
+                    <div className="title-timeline-form">
                         <p>header</p>
                     </div>
                     <div className="content-timeline-form">
