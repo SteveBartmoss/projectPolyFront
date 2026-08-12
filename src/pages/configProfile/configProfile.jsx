@@ -1,4 +1,4 @@
-import { ProfileForm } from "../../components/profile/profileForm/profileForm";
+import { ProfileForm } from "../../components/profile/profileForm";
 
 
 export function ConfigProfile(){
