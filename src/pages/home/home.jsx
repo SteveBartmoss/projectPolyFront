@@ -6,6 +6,7 @@ import { apiClient } from "../../api/api";
 import { Timeline } from "../../components/timeline/timeline";
 import { TimelineForm } from "../../components/timeline/timelineForm";
 import { Box } from "../../plank-jsx/containers/box";
+import { PostForm } from "../../components/post/postForm";
 
 
 
@@ -29,9 +30,9 @@ export function Home(){
                     width: "80%",
                     margin: "auto",
                 }}>
-                    <TimelineForm />
 
-                    <Timeline />
+                    <PostForm />
+                    
                 </Box>
                 <Box styles={{
                     width: "10%",
