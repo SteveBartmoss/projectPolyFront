@@ -1,15 +1,21 @@
+import './ css/postform.css'
+import { useState } from "react"
+import { Box } from "../../plank-jsx/containers/box"
+import { TextField } from "../../plank-jsx/textfield/textField"
+import { TextBox } from "../../plank-jsx/textBox/textBox"
+import { Btn } from "../../ui/btn/btn"
 
 
 export function PostForm() {
 
     const [formData, setFormData] = useState({
-        title:'',
+        title: '',
         content: '',
     })
 
     const handleChange = (event) => {
-        const {name, value} = event.target
-        setFormData({...formData, [name]: value})
+        const { name, value } = event.target
+        setFormData({ ...formData, [name]: value })
     }
 
     const handleSubmit = async () => {
@@ -17,12 +23,12 @@ export function PostForm() {
 
             console.log(formData)
 
-        } catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
 
-    return(
+    return (
         <>
             <Box styles={{
                 width: "40rem",
@@ -32,25 +38,28 @@ export function PostForm() {
                 alignItems: "center",
                 justifyContent: "center",
             }}>
-                <div>
-                    <TextField 
-                        nameField="title"
-                        textHolder="Titulo"
-                        target={formData.title}
-                        handleTarget={handleChange}
-                    />
+                <div className='div-form-post'>
+                    <div className='title-form-post back-ground-topics'>
+                        <TextField
+                            nameField="title"
+                            textHolder="Titulo"
+                            target={formData.title}
+                            handleTarget={handleChange}
+                        />
+                    </div>
+                    <div className='content-form-post'>
+                        <TextBox
+                            nameField="content"
+                            placeholder="Content"
+                            content={formData.content}
+                            setContent={handleChange}
+                        />
+                    </div>
+                    <div className='footer-form-post back-ground-topics'>
+                        <Btn title="Publicar" />
+                    </div>
                 </div>
-                <div>
-                    <TextBox 
-                        nameField="content"
-                        placeholder="Content"
-                        content={formData.content}
-                        setContent={handleChange}
-                    />
-                </div>
-                <div>
-                    <Btn title="Publicar" />
-                </div>
+
             </Box>
         </>
     )
