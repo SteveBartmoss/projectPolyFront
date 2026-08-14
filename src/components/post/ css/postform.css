@@ -1,0 +1,30 @@
+.div-form-post{
+    min-width: 40rem;
+    background-color: #2e3748;
+    border-radius: 1rem;
+}
+
+.back-ground-topics{
+    background-color: #404754;
+}
+
+.footer-form-post{
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.title-form-post{
+   padding: 1rem;
+   border-radius: 1rem 1rem 0 0;
+}
+
+.text-from-card{
+    margin: 0;
+}
+
+.content-form-post{
+    padding: .5rem;
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
