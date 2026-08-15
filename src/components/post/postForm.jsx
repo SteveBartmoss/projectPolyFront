@@ -4,6 +4,7 @@ import { Box } from "../../plank-jsx/containers/box"
 import { TextField } from "../../plank-jsx/textfield/textField"
 import { TextBox } from "../../plank-jsx/textBox/textBox"
 import { Btn } from "../../ui/btn/btn"
+import { apiClient } from '../../api/api'
 
 
 export function PostForm() {
@@ -21,7 +22,10 @@ export function PostForm() {
     const handleSubmit = async () => {
         try {
 
-            console.log(formData)
+            const userData = JSON.parse(localStorage.getItem('session'))
+            let body = {...formData,userId: userData.id}
+            const response = await apiClient.post('/post',{body: body})
+            console.log(response)
 
         } catch (error) {
             console.log(error)
@@ -56,7 +60,10 @@ export function PostForm() {
                         />
                     </div>
                     <div className='footer-form-post back-ground-topics'>
-                        <Btn title="Publicar" />
+                        <Btn
+                           handle={handleSubmit}  
+                            title="Publicar" 
+                        />
                     </div>
                 </div>
 
