@@ -7,6 +7,7 @@ import { Timeline } from "../../components/timeline/timeline";
 import { TimelineForm } from "../../components/timeline/timelineForm";
 import { Box } from "../../plank-jsx/containers/box";
 import { PostForm } from "../../components/post/postForm";
+import { PostFeed } from "../../components/post/postFeed";
 
 
 
@@ -32,6 +33,8 @@ export function Home(){
                 }}>
 
                     <PostForm />
+
+                    <PostFeed />
                     
                 </Box>
                 <Box styles={{
