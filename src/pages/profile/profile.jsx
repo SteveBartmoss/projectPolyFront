@@ -36,10 +36,18 @@ export function Profile() {
 
     return (
         <>
+            <div className="profile-page">
+
+                {/* PROFILE HEADER */}
+                <section className='profile-card'>
+
+                </section>
+            </div>
+
             <Box styles={{
                 display: "flex",
                 flexDirection: "row",
-            }}>
+            }}>    
                 <Box styles={{
                     width: "20%",
                     margin: "0 auto",
