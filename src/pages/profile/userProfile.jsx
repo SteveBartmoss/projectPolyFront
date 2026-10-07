@@ -1,13 +1,5 @@
-import {
-  CalendarDays,
-  Link as LinkIcon,
-  MapPin,
-  MessageCircle,
-  MoreHorizontal,
-  UserPlus,
-} from "lucide-react";
 
-import "./Profile.css";
+import "./userprofile.css";
 
 const user = {
   name: "Marco Rivas",
@@ -55,7 +47,7 @@ const posts = [
   },
 ];
 
-function Profile() {
+function UserProfile() {
   return (
     <div className="profile-page">
 
@@ -69,7 +61,7 @@ function Profile() {
           }}
         >
           <button className="icon-button cover-menu">
-            <MoreHorizontal size={20} />
+            icon
           </button>
         </div>
 
@@ -87,17 +79,15 @@ function Profile() {
 
           <div className="profile-actions">
             <button className="secondary-button">
-              <MessageCircle size={17} />
               Mensaje
             </button>
 
             <button className="primary-button">
-              <UserPlus size={17} />
               Seguir
             </button>
 
             <button className="icon-button">
-              <MoreHorizontal size={20} />
+              icon
             </button>
           </div>
 
@@ -124,19 +114,17 @@ function Profile() {
             <div className="profile-meta">
 
               <span>
-                <MapPin size={16} />
                 {user.location}
               </span>
 
               <span>
-                <LinkIcon size={16} />
+                icon
                 <a href={`https://${user.website}`}>
                   {user.website}
                 </a>
               </span>
 
               <span>
-                <CalendarDays size={16} />
                 {user.joined}
               </span>
 
@@ -247,7 +235,7 @@ function ProfilePost({ post, user }) {
           </div>
 
           <button className="post-menu">
-            <MoreHorizontal size={18} />
+            icon
           </button>
 
         </div>
@@ -259,7 +247,7 @@ function ProfilePost({ post, user }) {
         <div className="post-actions">
 
           <button>
-            <MessageCircle size={17} />
+            icon
             {post.comments}
           </button>
 
@@ -422,4 +410,4 @@ function ProfileSidebar() {
   );
 }
 
-export default Profile;
+export default UserProfile;
