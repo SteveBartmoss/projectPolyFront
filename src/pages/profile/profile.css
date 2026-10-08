@@ -24,6 +24,40 @@
     sans-serif;
 }
 
+.profile-cover {
+  position: relative;
+
+  height: 250px;
+
+  background-position: center;
+  background-size: cover;
+
+  border-bottom: 1px solid #1b2235;
+}
+
+.profile-cover::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 8, 15, 0.05),
+      rgba(5, 8, 15, 0.5)
+    );
+}
+
+.cover-menu {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+
+  z-index: 2;
+}
+
+
 .profile-img{
     width: 50%;
     border-radius: 50%;
