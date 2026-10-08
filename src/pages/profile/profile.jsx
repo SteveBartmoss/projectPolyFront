@@ -20,7 +20,7 @@ export function Profile() {
         try {
 
             const response = await apiClient.get(`/profile-user/${id}`)
-            
+
             setProfile(response.data)
             console.log(response)
 
@@ -32,7 +32,7 @@ export function Profile() {
 
     useEffect(() => {
         getProfile()
-    },[])
+    }, [])
 
     return (
         <>
@@ -41,13 +41,18 @@ export function Profile() {
                 {/* PROFILE HEADER */}
                 <section className='profile-card'>
 
+                    <div className="profile-cover">
+                        <button className="icon-button cover-menu">
+                            icon
+                        </button>
+                    </div>
                 </section>
             </div>
 
             <Box styles={{
                 display: "flex",
                 flexDirection: "row",
-            }}>    
+            }}>
                 <Box styles={{
                     width: "20%",
                     margin: "0 auto",
