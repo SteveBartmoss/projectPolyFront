@@ -46,6 +46,30 @@ export function Profile() {
                             icon
                         </button>
                     </div>
+
+                    <div className="profile-main">
+
+                        <div className="profile-avatar-wrapper">
+                            <img className="profile-avatar" src={profileImg} />
+
+                            <span className="online-indicator" />
+                        </div>
+
+                        <div className="profile-actions">
+                            <button className="secondary-button">
+                                Mensaje
+                            </button>
+
+                            <button className="primary-button">
+                            Seguir
+                            </button>
+
+                            <button className="icon-button">
+                            icon
+                            </button>
+                        </div>
+
+                    </div>
                 </section>
             </div>
 
